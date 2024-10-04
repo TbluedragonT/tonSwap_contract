@@ -18,8 +18,8 @@ This project depends on the executables **fift**, **func** . You can build them 
 
 ### Func Compiler
 
-This project is using the latest func features such as `#include` and `const` so please use the latest func compiler ,
-If you want to set an explicit func path you may use the FUNC_PATH environment variable `export FUNC_PATH=/usr/local/bin/func`
+This project utilizes the latest features of the FunC programming language, including `#include` and `const`, so please ensure you are using the latest FunC compiler.
+If you want to set a specific func path, you can do so by using the FUNC_PATH environment variable `export FUNC_PATH=/usr/local/bin/func`
 
 ### Run tests
 
