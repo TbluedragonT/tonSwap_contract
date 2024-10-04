@@ -2,13 +2,11 @@
 
 ## TonSwap is live on TON mainnet.
 
-TonSwap is live on TON mainnet. TonSwap is in Beta, use at your own risk
+TonSwap is currently live on the TON mainnet and is in beta, so please use it at your own risk.
 
 ## Overview
 
-TonSwap is a DEX/AMM using the Uniswap V2 curve (a financial model shared by many popular AMMs like PancakeSwap, QuickSwap, Sushi) to create liquidity pairs and allow traders to swap tokens and liquidity providers to supply liquidity and earn rewards.
-
-The project depends on an Jetton standard implementation for [Jetton](https://github.com/ton-blockchain/token-contract/tree/jettons/ft).
+TonSwap is a decentralized exchange (DEX) and automated market maker (AMM) that utilizes the Uniswap V2 curve, a financial model commonly used by popular AMMs like PancakeSwap, QuickSwap, and Sushi. This platform enables traders to swap tokens and allows liquidity providers to supply liquidity and earn rewards.
 
 ## Develop
 
