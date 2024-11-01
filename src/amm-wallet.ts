@@ -45,6 +45,10 @@ export class AmmLpWallet implements iTvmBusContract {
         return this.contract.sendInternalMessage(message);
     }
 
+    async sendInternalMessage2(message: InternalMessage) {
+        const res = await this.contract.sendInternalMessage(message);
+        return parseInternalMessageResponse(res);
+    }
 
     async init(fakeAddress: Address) {
         let messageBody = new Cell();
