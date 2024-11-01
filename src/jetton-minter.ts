@@ -211,7 +211,7 @@ export class JettonMinter implements iTvmBusContract {
             logs: filterLogs(res.logs),
         };
     }
-
+                                  
     async getJettonData() {
         if (!this.contract) {
             return;
