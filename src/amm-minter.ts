@@ -22,7 +22,7 @@ export class AmmMinterMessages {
         cell.bits.writeCoins(tonToSwap); // swapping amount of tons
         cell.bits.writeCoins(minAmountOut); // minimum received
         return cell;
-    }
+    }    
     static compileCodeToCell() {
         const ammMinterCodeB64: string = compileFuncToB64(["contracts/amm-minter.fc"]);
         return Cell.fromBoc(ammMinterCodeB64);
