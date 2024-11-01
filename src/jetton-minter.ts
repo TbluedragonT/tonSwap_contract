@@ -161,6 +161,18 @@ export class JettonMinter implements iTvmBusContract {
         return this.contract.sendInternalMessage(message);
     }
 
+    async mintMessage(sender: Address, receiver: Address, jettonAmount: BN) {
+        return new InternalMessage({
+            from: sender,
+            to: this.address as Address,
+            value: toNano(0.1),
+            bounce: false,
+            body: new CommonMessageInfo({
+                body: new CellMessage(JettonMinter.Mint(receiver, jettonAmount)),
+            }),
+        });
+    }
+
     // burn#595f07bc query_id:uint64 amount:(VarUInteger 16)
     //           response_destination:MsgAddress custom_payload:(Maybe ^Cell)
     //           = InternalMsgBody;
