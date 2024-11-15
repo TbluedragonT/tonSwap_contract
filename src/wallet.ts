@@ -21,10 +21,7 @@ export class Wallet implements iTvmBusContract {
         });
     }
 
-    async sendInternalMessage(message: InternalMessage) {
-        //@ts-ignore
-        return this.contract.sendInternalMessage(message);
-    }
+
 
     static async Create(tvmBus: TvmBus, balance = toNano(10), publicKey = new BN(0), walletId = 0) {
         const dataCell = beginCell().storeUint(0, 32).storeUint(walletId, 32).storeBuffer(publicKey.toBuffer()).endCell();
