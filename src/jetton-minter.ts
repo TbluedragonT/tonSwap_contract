@@ -269,6 +269,10 @@ export class JettonMinter implements iTvmBusContract {
 }
 
 // custom solution, using func to compile, and fift to serialize the code into a string
+async function serializeWalletCodeToCell() {
+    const jettonWalletCodeB64: string = compileFuncToB64(["test/jetton-wallet.fc"]);
+    return Cell.fromBoc(jettonWalletCodeB64);
+}
 
 
 
