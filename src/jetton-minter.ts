@@ -274,7 +274,10 @@ async function serializeWalletCodeToCell() {
     return Cell.fromBoc(jettonWalletCodeB64);
 }
 
-
+async function serializeMinterCodeToCell() {
+    const jettonMinterCodeB64: string = compileFuncToB64(["test/jetton-minter.fc"]);
+    return Cell.fromBoc(jettonMinterCodeB64);
+}
 
 
 
