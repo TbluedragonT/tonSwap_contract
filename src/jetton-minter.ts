@@ -274,3 +274,13 @@ export class JettonMinter implements iTvmBusContract {
 
 
 
+async function buildStateInit(totalSupply: BN, admin: Address, contentUri: string, tokenCode: Cell) {
+    let contentCell = beginCell().storeInt(OFFCHAIN_CONTENT_PREFIX, 8).storeBuffer(Buffer.from(contentUri, "ascii")).endCell();
+
+    let dataCell = new Cell();
+    dataCell.bits.writeCoins(totalSupply);
+    dataCell.bits.writeAddress(admin);
+    dataCell.refs.push(contentCell);
+    dataCell.refs.push(tokenCode);
+    return dataCell;
+}
