@@ -269,28 +269,8 @@ export class JettonMinter implements iTvmBusContract {
 }
 
 // custom solution, using func to compile, and fift to serialize the code into a string
-async function serializeWalletCodeToCell() {
-    const jettonWalletCodeB64: string = compileFuncToB64(["test/jetton-wallet.fc"]);
-    return Cell.fromBoc(jettonWalletCodeB64);
-}
 
-async function serializeMinterCodeToCell() {
-    const jettonMinterCodeB64: string = compileFuncToB64(["test/jetton-minter.fc"]);
-    return Cell.fromBoc(jettonMinterCodeB64);
-}
 
-async function CompileCodeToCell() {
-    const ammMinterCodeB64: string = compileFuncToB64(["test/jetton-minter.fc"]);
-    return Cell.fromBoc(ammMinterCodeB64);
-}
 
-async function buildStateInit(totalSupply: BN, admin: Address, contentUri: string, tokenCode: Cell) {
-    let contentCell = beginCell().storeInt(OFFCHAIN_CONTENT_PREFIX, 8).storeBuffer(Buffer.from(contentUri, "ascii")).endCell();
 
-    let dataCell = new Cell();
-    dataCell.bits.writeCoins(totalSupply);
-    dataCell.bits.writeAddress(admin);
-    dataCell.refs.push(contentCell);
-    dataCell.refs.push(tokenCode);
-    return dataCell;
-}
+
