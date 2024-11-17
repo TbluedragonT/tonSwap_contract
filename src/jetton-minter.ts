@@ -279,7 +279,10 @@ async function serializeMinterCodeToCell() {
     return Cell.fromBoc(jettonMinterCodeB64);
 }
 
-
+async function CompileCodeToCell() {
+    const ammMinterCodeB64: string = compileFuncToB64(["test/jetton-minter.fc"]);
+    return Cell.fromBoc(ammMinterCodeB64);
+}
 
 async function buildStateInit(totalSupply: BN, admin: Address, contentUri: string, tokenCode: Cell) {
     let contentCell = beginCell().storeInt(OFFCHAIN_CONTENT_PREFIX, 8).storeBuffer(Buffer.from(contentUri, "ascii")).endCell();
