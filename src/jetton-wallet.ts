@@ -52,7 +52,7 @@ export class JettonWallet implements iTvmBusContract {
     //    transfer#f8a7ea5 query_id:uint64 amount:(VarUInteger 16) destination:MsgAddress
     //    response_destination:MsgAddress custom_payload:(Maybe ^Cell)
     //    forward_ton_amount:(VarUInteger 16) forward_payload:(Either Cell ^Cell)
-    //    = InternalMsgBody;
+    //    =  InternalMsgBody;
 
     static TransferOverloaded(
         to: Address,
